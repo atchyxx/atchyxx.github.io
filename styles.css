@@ -58,25 +58,12 @@ h1 {
   background: rgba(30, 41, 59, 0.55);
 }
 
-.button {
-  display: inline-block;
-  padding: 0.7rem 1rem;
-  background: #3b82f6;
-  color: white;
-  border-radius: 0.6rem;
-  text-decoration: none;
-}
-
 main {
   padding: 2rem 0;
 }
 
 section + section {
   margin-top: 2rem;
-}
-
-a {
-  color: #93c5fd;
 }
 
 ul {
