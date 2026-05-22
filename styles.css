@@ -84,6 +84,10 @@ ul {
   border: 1px solid #334155;
 }
 
+.extra-gallery {
+  margin-top: 0.9rem;
+}
+
 .footer {
   padding: 1rem 0 2rem;
   color: #94a3b8;
