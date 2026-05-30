@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>さいころトーク</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: "Yu Gothic UI", "Segoe UI", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #f8fbff, #f2f4ff);
+    }
+
+    .card {
+      width: min(92vw, 420px);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+      background: #fff;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 1rem;
+      font-size: 1.4rem;
+    }
+
+    .dice {
+      width: 120px;
+      aspect-ratio: 1;
+      margin: 0 auto 1rem;
+      border-radius: 16px;
+      border: 3px solid #2d2d2d;
+      display: grid;
+      place-items: center;
+      font-size: 3.5rem;
+      font-weight: 700;
+      user-select: none;
+    }
+
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 0.7rem 1.2rem;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      background: #315efb;
+      color: #fff;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    p {
+      margin: 1rem 0 0;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>さいころトーク</h1>
+    <div class="dice" id="dice">⚀</div>
+    <button id="rollButton" type="button">さいころを振る</button>
+    <p id="result">ボタンを押すとランダムな目が出ます。</p>
+  </main>
+
+  <script>
+    const diceFaces = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+    const dice = document.getElementById("dice");
+    const result = document.getElementById("result");
+    const rollButton = document.getElementById("rollButton");
+
+    function rollDice() {
+      const value = Math.floor(Math.random() * 6) + 1;
+      dice.textContent = diceFaces[value - 1];
+      result.textContent = `${value} が出ました！`;
+    }
+
+    rollButton.addEventListener("click", rollDice);
+  </script>
+</body>
+</html>
